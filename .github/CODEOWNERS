@@ -1,0 +1,14 @@
+# Folder owners review pull requests that touch their folders (03_GETTING_STARTED.md, Section 3).
+# REPLACE the placeholder handles below with real GitHub usernames before enabling code-owner reviews.
+* @REPLACE_teamlead
+/karmasky/env/ @REPLACE_member1
+/scripts/run_solo.py @REPLACE_member1
+/karmasky/agents/ @REPLACE_member2
+/scripts/train.py @REPLACE_member2
+/karmasky/federation/ @REPLACE_member3
+/karmasky/karma/ @REPLACE_member3
+/karmasky/eval/ @REPLACE_member4
+/karmasky/safety/ @REPLACE_member4
+/karmasky/attacks/ @REPLACE_member4
+/docs/ @REPLACE_teamlead
+/configs/experiments/ @REPLACE_teamlead
