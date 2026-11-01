@@ -1,0 +1,40 @@
+# Python caches and builds
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# Virtual environments and secrets
+/.venv/
+/venv/
+/.env
+
+# Results: everything except the README (keep raw results on the shared drive)
+results/*
+!results/README.md
+
+# Training outputs
+runs/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+tensorboard/
+tb_logs/
+events.out.tfevents.*
+
+# Research PDFs and third-party code copies (public repo: do not commit copyrighted papers)
+research/**/*.pdf
+research/**/*.zip
+research/**/Multi_UAV_Data_Harvesting-master/
+
+# Large data files
+*.npy
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
