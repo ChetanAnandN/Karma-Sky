@@ -1,0 +1,12 @@
+# K1: F + karma, no giveback, no cap. Answers: RQ3.
+# Source: docs/onboarding/09_EXPERIMENT_PLAN.md (all PROPOSED). Overrides configs/train_default.yaml.
+id: K1
+extends: ../train_default.yaml
+fleet_mix: [X, Y]                  # PROPOSED (09: main X+Y; control X+X; optional X+Y+Y)
+federation:
+  enabled: true
+  rule: TODO  # which F rule K1 builds on is not stated in 09
+karma:
+  enabled: true
+  giveback: none
+  cap_share: none

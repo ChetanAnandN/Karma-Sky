@@ -1,0 +1,56 @@
+# Default training settings. Experiment files in configs/experiments/ override these.
+# Tags: FROM PAPER = printed in the cited paper; PROPOSED = our plan in docs; OPEN = undecided in 07.
+# Owners: Member 2 (ppo), Member 3 (federation, karma), Team lead (run settings).
+
+ppo:                                  # Sharifi et al. 2026, arXiv:2605.01041v3, Sec. III-B and III-D
+  learning_rate: 1.0e-4               # FROM PAPER
+  entropy_coef: 1.0e-3                # FROM PAPER
+  clip: 0.2                           # FROM PAPER
+  batch_size: 512                     # FROM PAPER
+  epochs_per_update: 8                # FROM PAPER (8 epochs per episode)
+  optimizer: adam                     # FROM PAPER
+  advantage: gae                      # FROM PAPER
+  # TODO: discount gamma and GAE lambda. Sharifi et al. do not print them. Brittain, Yang and
+  # Wei 2020 (arXiv:2003.08353, Table 1) and Brittain and Wei 2022 (IEEE T-ASE, Table I)
+  # use gamma 0.99 and lambda 0.95. Decide and record the choice (T1 in 07).
+  gamma: TODO
+  gae_lambda: TODO
+
+network:
+  # FROM PAPER: Sharifi et al. Sec. III-D (64-unit encoders, 64x64 attention, two 128-unit layers).
+  # FROM PAPER: intent head 3 x FC128 from Brittain and Wei 2022 (IEEE T-ASE, Sec. III-C, Fig. 2).
+  own_encoder: 64                     # FROM PAPER (Sharifi et al., Sec. III-D)
+  neighbor_encoder: 64                # FROM PAPER (Sharifi et al., Sec. III-D)
+  attention: 64                       # FROM PAPER (Sharifi et al., Sec. III-D)
+  intent_head: [128, 128, 128]        # FROM PAPER (Brittain and Wei 2022, Sec. III-C)
+  decider: [128, 128]                 # FROM PAPER (Sharifi et al., Sec. III-D)
+  # TODO: d_own and d_nb (input sizes). Read Sharifi et al., Sec. III-C.1 (state space) and
+  # Brittain and Wei 2022, Sec. III-A.1; check against privacy fix 2 in 06. See karmasky/interfaces.py.
+  d_own: TODO
+  d_nb: TODO
+
+run:
+  training_episodes: 2500             # FROM PAPER (Sharifi et al., Sec. IV-A.3)
+  evaluation_episodes: 300            # FROM PAPER (Sharifi et al., Sec. IV-A.3)
+  seeds: [0, 1, 2]                    # PROPOSED (09: 3 seeds per setup; Sharifi et al. used 5)
+  small_test:                         # PROPOSED (03 Section 5 rule 4: test small first)
+    drones_per_company: 2
+    episodes: 10
+
+federation:
+  enabled: false                      # experiment files switch this on
+  interval_episodes: 50               # PROPOSED (09; T2 still OPEN in 07). Chen et al. 2023 use N_freq = 50 (Sec. V)
+  rule: F1                            # PROPOSED (09: F1 equal, F2 fairness-weighted, F3 contribution-weighted)
+  shared_parts: [neighbor_encoder, attention, intent_head]   # PROPOSED (06 Update 2; T3 still OPEN in 07)
+  dp_noise: off                       # OPEN (T10 in 07)
+
+shapley:
+  utility_lowc_weight: 0.1            # PROPOSED (04: NMAC reduction + 0.1 x LoWC reduction; T7 still OPEN in 07)
+  smoothing_old: 0.8                  # PROPOSED (04)
+  smoothing_new: 0.2                  # PROPOSED (04)
+
+karma:
+  enabled: false                      # experiment files switch this on
+  cap_share: 0.60                     # PROPOSED (04; T6 in 07: 60%)
+  giveback: TODO                      # OPEN (T4 in 07: uniform or need-based)
+  bidding_rule: TODO                  # OPEN (T5 in 07: fixed rule, lean fixed)

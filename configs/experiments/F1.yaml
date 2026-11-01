@@ -1,0 +1,10 @@
+# F1: Federated, equal average. Answers: RQ1, RQ2.
+# Source: docs/onboarding/09_EXPERIMENT_PLAN.md (all PROPOSED). Overrides configs/train_default.yaml.
+id: F1
+extends: ../train_default.yaml
+fleet_mix: [X, Y]                  # PROPOSED (09: main X+Y; control X+X; optional X+Y+Y)
+federation:
+  enabled: true
+  rule: F1
+karma:
+  enabled: false

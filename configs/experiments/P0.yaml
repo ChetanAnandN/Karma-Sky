@@ -1,0 +1,7 @@
+# P0: Route-leakage attack without privacy fixes. Answers: RQ5.
+# Source: docs/onboarding/09_EXPERIMENT_PLAN.md (all PROPOSED). Overrides configs/train_default.yaml.
+id: P0
+extends: ../train_default.yaml
+fleet_mix: [X, Y]                  # PROPOSED (09: main X+Y; control X+X; optional X+Y+Y)
+attack: route_leakage
+privacy_fixes: off

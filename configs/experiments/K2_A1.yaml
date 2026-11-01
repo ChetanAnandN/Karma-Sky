@@ -1,0 +1,8 @@
+# K2_A1: K2 under free riding, with and without defenses. Answers: RQ4.
+# Source: docs/onboarding/09_EXPERIMENT_PLAN.md (all PROPOSED). Overrides configs/train_default.yaml.
+id: K2_A1
+extends: ../train_default.yaml
+fleet_mix: [X, Y]                  # PROPOSED (09: main X+Y; control X+X; optional X+Y+Y)
+base_setup: K2
+attack: free_rider
+defenses: [on, off]

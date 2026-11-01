@@ -1,0 +1,8 @@
+# S1: Best setup + helicopter + shield. Answers: RQ6 (stretch or core, OPEN).
+# Source: docs/onboarding/09_EXPERIMENT_PLAN.md (all PROPOSED). Overrides configs/train_default.yaml.
+id: S1
+extends: ../train_default.yaml
+fleet_mix: [X, Y]                  # PROPOSED (09: main X+Y; control X+X; optional X+Y+Y)
+base_setup: TODO  # best setup, chosen after Phase 3
+helicopter: true
+shield: true

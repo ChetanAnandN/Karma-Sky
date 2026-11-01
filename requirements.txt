@@ -1,0 +1,16 @@
+# KarmaSky dependencies (docs/onboarding/03_GETTING_STARTED.md, Section 2). No version pins yet.
+# Use Python 3.10 or 3.11 (check BlueSky's supported versions first).
+# For torch on GPU machines, pick the right CUDA build from pytorch.org.
+# Once everything installs and runs: pip freeze > requirements-lock.txt and commit that file.
+bluesky-simulator
+bluesky-gym
+torch
+gymnasium
+pettingzoo
+numpy
+scipy
+pandas
+matplotlib
+pyyaml
+tensorboard
+pytest

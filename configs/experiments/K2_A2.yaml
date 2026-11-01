@@ -1,0 +1,8 @@
+# K2_A2: K2 under exam gaming, with and without defenses. Answers: RQ4.
+# Source: docs/onboarding/09_EXPERIMENT_PLAN.md (all PROPOSED). Overrides configs/train_default.yaml.
+id: K2_A2
+extends: ../train_default.yaml
+fleet_mix: [X, Y]                  # PROPOSED (09: main X+Y; control X+X; optional X+Y+Y)
+base_setup: K2
+attack: exam_gaming
+defenses: [on, off]

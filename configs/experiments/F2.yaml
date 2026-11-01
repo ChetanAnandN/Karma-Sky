@@ -1,0 +1,10 @@
+# F2: Federated, fairness-weighted. Answers: RQ2.
+# Source: docs/onboarding/09_EXPERIMENT_PLAN.md (all PROPOSED). Overrides configs/train_default.yaml.
+id: F2
+extends: ../train_default.yaml
+fleet_mix: [X, Y]                  # PROPOSED (09: main X+Y; control X+X; optional X+Y+Y)
+federation:
+  enabled: true
+  rule: F2
+karma:
+  enabled: false

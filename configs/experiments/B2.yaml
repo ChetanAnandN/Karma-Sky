@@ -1,0 +1,10 @@
+# B2: One centralized learner for all drones. Answers: Reference upper bound.
+# Source: docs/onboarding/09_EXPERIMENT_PLAN.md (all PROPOSED). Overrides configs/train_default.yaml.
+id: B2
+extends: ../train_default.yaml
+fleet_mix: [X, Y]                  # PROPOSED (09: main X+Y; control X+X; optional X+Y+Y)
+learner: centralized
+federation:
+  enabled: false
+karma:
+  enabled: false

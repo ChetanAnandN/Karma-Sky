@@ -1,0 +1,63 @@
+# Frisco scenario (Sharifi et al. 2026, arXiv:2605.01041v3, Sec. IV-A), simulated in BlueSky.
+# Only values written in our docs are filled in. Tags: FROM PAPER = printed in the cited paper;
+# PROPOSED = our plan in docs/onboarding or docs/plan; OPEN = still undecided in 07.
+# Owner: Member 1.
+
+scenario:
+  name: frisco                       # FROM PAPER (Sharifi et al., Sec. IV-A.1)
+  route_count: 4                     # FROM PAPER (Sharifi et al., Sec. IV-A.1)
+  route_length_km: 10.33             # FROM PAPER (Sharifi et al., Sec. IV-A.1: "approximately the same total length of 10.33 km")
+  merge_waypoints: [WP3, WP7]        # FROM PAPER (Sharifi et al., Sec. IV-A.1)
+  intersection_waypoint: WP9         # FROM PAPER (Sharifi et al., Sec. IV-A.1)
+  # TODO: waypoint coordinates and the waypoint order of each route. Read Sharifi et al.,
+  # Sec. IV-A.1 and Fig. 1 (route list WP1..WP9); the paper does not print coordinates,
+  # so they must be measured from Fig. 1 or requested from the authors.
+  waypoints: TODO
+  routes: TODO
+
+companies:
+  count: 2                           # FROM PAPER (Sharifi et al., Sec. IV-A.1)
+  drones_per_company: 10             # FROM PAPER (Sharifi et al., Sec. IV-A.1)
+  # TODO: spawn schedule. Read Sharifi et al., Sec. IV-A.1 (spawn times and drones per route).
+  spawn: TODO
+
+fleets:
+  X:                                 # strong configuration
+    max_speed_mps: 44.88             # FROM PAPER (Sharifi et al., Sec. IV-A.2)
+    accel_mps2: 1.71                 # FROM PAPER (Sharifi et al., Sec. IV-A.2)
+    sensing_range_m: 1000            # FROM PAPER (Sharifi et al., Sec. IV-A.2)
+  Y:                                 # weak configuration
+    max_speed_mps: 30.12             # FROM PAPER (Sharifi et al., Sec. IV-A.2)
+    accel_mps2: 1.02                 # FROM PAPER (Sharifi et al., Sec. IV-A.2)
+    sensing_range_m: 750             # FROM PAPER (Sharifi et al., Sec. IV-A.2)
+
+fleet_mix: [X, Y]                    # PROPOSED (09: main mix X+Y; control X+X; optional X+Y+Y)
+
+simulation:
+  step_s: 3                          # FROM PAPER (Sharifi et al., Sec. III-D)
+  # Sharifi et al. Sec. III-D give a mission horizon T = 18 min; Sec. IV-A.3 reports each
+  # episode simulated about 12 min (240 steps). 09 calls 18 min the "episode length".
+  mission_horizon_min: 18            # FROM PAPER (Sharifi et al., Sec. III-D)
+  headless: TODO                     # PROPOSED: decide headless run method in Week 1 (03, Section 2)
+
+separation:
+  nmac_m: 100                        # FROM PAPER (Sharifi et al., Sec. III-D, d_NMAC)
+  lowc_m: 500                        # FROM PAPER (Sharifi et al., Sec. III-D, d_LoWC)
+
+reward:
+  # TODO: reward coefficients. Read Sharifi et al., Sec. III-C.3 and Sec. III-D
+  # (R_LoS, R_V, R_A, R_M, R_T and their coefficients). Not copied into our docs yet.
+  coefficients: TODO
+
+contest:                             # used by karma/bidding.py
+  radius_m: 500                      # PROPOSED (04; T8 in 07)
+  horizon_s: 60                      # PROPOSED (04; T8 in 07)
+
+shield:
+  lookahead_s: 30                    # PROPOSED (04, Member 4)
+  drone_separation_m: 100            # PROPOSED (03 Section 5 rule 6; 04, Member 4)
+  helicopter_separation_m: 500       # PROPOSED (04, Member 4)
+  fallback_action: slow              # PROPOSED (04, Member 4)
+
+helicopter:
+  enabled: false                     # OPEN (M3 in 07: core or stretch)

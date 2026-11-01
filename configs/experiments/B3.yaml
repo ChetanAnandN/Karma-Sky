@@ -1,0 +1,10 @@
+# B3: Rule-based, no learning. Answers: Reference.
+# Source: docs/onboarding/09_EXPERIMENT_PLAN.md (all PROPOSED). Overrides configs/train_default.yaml.
+id: B3
+extends: ../train_default.yaml
+fleet_mix: [X, Y]                  # PROPOSED (09: main X+Y; control X+X; optional X+Y+Y)
+learner: rule_based  # TODO: rule from Sharifi et al. Sec. IV-B.1 (their ref. [25], arXiv:2603.28561)
+federation:
+  enabled: false
+karma:
+  enabled: false
