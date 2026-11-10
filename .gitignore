@@ -24,6 +24,7 @@ checkpoints/
 tensorboard/
 tb_logs/
 events.out.tfevents.*
+examples/demo_results/
 
 # Research PDFs and third-party code copies (public repo: do not commit copyrighted papers)
 research/**/*.pdf

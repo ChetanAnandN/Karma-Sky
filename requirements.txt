@@ -9,7 +9,6 @@ gymnasium
 pettingzoo
 numpy
 scipy
-pandas
 matplotlib
 pyyaml
 tensorboard

@@ -1,0 +1,7 @@
+time_s,drone,company,position,action,min_distance_m,flags
+3,X1,Company_X,"(100, 200)",1,650,
+6,X1,Company_X,"(110, 210)",1,95,NMAC
+9,X2,Company_X,"(120, 220)",0,420,LoWC|shield
+3,Y1,Company_Y,"(500, 600)",1,700,
+6,Y1,Company_Y,"(510, 610)",0,480,LoWC
+9,Y2,Company_Y,"(520, 620)",2,800,shield

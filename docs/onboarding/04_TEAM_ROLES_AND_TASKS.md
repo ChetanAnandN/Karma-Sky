@@ -14,7 +14,7 @@ All roles and dates are **[PROPOSED]**. Swap roles to fit people's strengths. Na
 - Member 1: BlueSky commands and Python API, basic geometry, Gymnasium/PettingZoo environment style
 - Member 2: PyTorch, PPO, attention layers
 - Member 3: Federated averaging, Shapley values, simple ledger logic
-- Member 4: pandas, matplotlib, statistical tests (Mann-Whitney U, Holm correction), geometry for the shield
+- Member 4: matplotlib, statistical tests (Mann-Whitney U, Holm correction), geometry for the shield; optional pandas for DataFrame inputs
 
 ---
 
@@ -100,11 +100,11 @@ All roles and dates are **[PROPOSED]**. Swap roles to fit people's strengths. Na
 
 **Weeks 1 to 2**
 - [ ] Read Sharifi's fairness and metrics section and ElSayed-Aly shield paper
-- [ ] Write `metrics.py` against fake logs: NMAC count, LoWC count, travel time, normalized delay Dk = (T_shared − T_solo) / T_solo, delay gap, worst-off delay, Ft = (1 − |TA − TB| / max) × 100
+- [x] Write `metrics.py` against fake logs: NMAC count, LoWC count, travel time, normalized delay Dk = (T_shared − T_solo) / T_solo, delay gap, worst-off delay, Ft = (1 − |TA − TB| / max) × 100
 
 **Weeks 3 to 5**
-- [ ] `stats.py`: Mann-Whitney U, Holm correction, effect sizes
-- [ ] `plots.py`: standard figures (delay per company, NMAC per setup, credit balances over time)
+- [x] `stats.py`: Mann-Whitney U, Holm correction, effect sizes
+- [x] `plots.py`: standard figures (delay per company, NMAC per setup, credit balances over time)
 - [ ] Evaluate B1 and B3 when ready (300 evaluation episodes each)
 
 **Weeks 6 to 9**

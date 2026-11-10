@@ -1,0 +1,6 @@
+drone,company,start_s,end_s,solo_time_s
+X1,Company_X,0,120,100
+X2,Company_X,10,135,110
+Y1,Company_Y,0,150,100
+Y2,Company_Y,10,165,110
+Y3,Company_Y,0,,105

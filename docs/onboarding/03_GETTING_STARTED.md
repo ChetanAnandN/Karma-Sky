@@ -34,8 +34,10 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install bluesky-simulator    # BlueSky air traffic simulator (PyPI latest checked Oct 2026: 1.1.1)
 pip install bluesky-gym          # RL environments on top of BlueSky (latest checked: 0.2.0)
 pip install torch                # pick the right CUDA build from pytorch.org for GPU machines
-pip install gymnasium pettingzoo numpy scipy pandas matplotlib pyyaml tensorboard pytest
+pip install gymnasium pettingzoo numpy scipy matplotlib pyyaml tensorboard pytest
 ```
+
+Pandas is optional and is only needed when passing a DataFrame to the evaluation credit-balance plot.
 
 Save the exact versions once it works:
 ```bash

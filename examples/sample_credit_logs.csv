@@ -1,0 +1,7 @@
+time_s,company,balance
+0,Company_X,10
+60,Company_X,14
+120,Company_X,17
+0,Company_Y,10
+60,Company_Y,11
+120,Company_Y,9

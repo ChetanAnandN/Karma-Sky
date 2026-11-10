@@ -3,7 +3,7 @@
 Contribution-earned priority for fair shared learning between competing drone delivery operators (SDG 9 semester project).
 Several delivery companies fly drones in the same city airspace and improve their collision-avoidance AI together through federated multi-agent reinforcement learning, without sharing raw flight data. A neutral referee scores each company's contribution, companies earn non-tradable karma credits to spend on priority at busy crossings, and a hard safety shield always overrides credits. Everything runs in simulation (BlueSky); no physical drones.
 
-**Status:** design stage, nothing implemented yet. The code folders contain placeholders only.
+**Status:** design stage. The Member 4 evaluation modules (metrics, statistics and plots) are implemented; the simulator, training and federation pipeline remain in development.
 
 ## Start here
 
@@ -15,7 +15,7 @@ Several delivery companies fly drones in the same city airspace and improve thei
 
 From [03_GETTING_STARTED.md](docs/onboarding/03_GETTING_STARTED.md), Section 2. Use Python 3.10 or 3.11 (check BlueSky's supported versions first).
 
-```bash
+```
 # with conda (recommended)
 conda create -n karmasky python=3.11 -y
 conda activate karmasky
@@ -33,6 +33,17 @@ pytest tests/test_smoke.py
 # once it works, save exact versions
 pip freeze > requirements-lock.txt
 ```
+
+The evaluation tests and sample-only demo can be run from the repository root:
+
+```bash
+pytest tests/test_member4_eval.py -q
+python examples/run_demo.py
+```
+
+The demo writes generated files to the ignored `examples/demo_results/` directory. Its CSV inputs and statistical arrays are illustrative fixtures, not experimental results.
+
+Pandas is optional; it is only needed when passing a pandas DataFrame to `plot_credit_balances`. Iterable rows such as dictionaries work without Pandas.
 
 ## Repository map
 
